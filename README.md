@@ -1,1 +1,1 @@
-This project is an introduction to the shell and bash scripting
+SysEng/DevOps folder for Holberton projects
