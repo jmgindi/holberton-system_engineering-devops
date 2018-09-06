@@ -1,0 +1,1 @@
+Answers to the questions on permissions in shell
