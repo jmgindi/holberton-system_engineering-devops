@@ -1,0 +1,1 @@
+Scripts for basic variable and expansion functions in bash
