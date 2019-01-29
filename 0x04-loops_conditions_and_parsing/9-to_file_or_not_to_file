@@ -3,12 +3,12 @@
 if [ -e "holbertonschool" ]; then
     echo "holbertonschool file exists"
     if [ -s "holbertonschool" ]; then
-	echo "holbertonschool is not empty"
+	echo "holbertonschool file is not empty"
     else
-	echo "holbertonschool is empty"
+	echo "holbertonschool file is empty"
     fi
     if [ -f "holbertonschool" ]; then
-	echo "holbertonschool is a regular file"
+	echo "holbertonschool file is a regular file"
     fi
 else
     echo "holbertonschool file does not exist"
