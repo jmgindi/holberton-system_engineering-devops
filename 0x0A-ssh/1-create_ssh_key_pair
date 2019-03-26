@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# creates a 4096-bit RSA pair protected by a password
+ssh-keygen -b 4096 -f holberton -N betty
