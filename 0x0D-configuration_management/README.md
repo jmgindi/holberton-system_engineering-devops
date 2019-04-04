@@ -1,0 +1,1 @@
+Scripts for setting up basic servers using Puppet
