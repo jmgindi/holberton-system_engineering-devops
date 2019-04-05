@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# opens port 80 on broken container by making both default files the same
+cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
