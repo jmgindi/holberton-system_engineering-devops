@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # takes a domain + subdomain and returns record type for subdomain
-# subdomain_certs() {
+subdomain_certs() {
     if [ "$#" -eq 2 ]; then
 	sub=$2
     else
-	declare -a sub=("www" "lb-01" "web-01" "web-02")
+	sub="www lb-01 web-01 web-02"
     fi
-    for item in "${sub[@]}"; do
-	echo -n "The subdomain $item "
-	dig "$item.$1" | grep -A1 'ANSWER SECTION:' | awk '{ print "is a "$4" record and points to " $5}'
+    for item in $sub; do
+    	echo -n "The subdomain $item "
+	dig "$item.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{ print "is a " $4 " record and points to " $5}'
     done
-# }
-# subdomain_certs "$1" "$2"
+}
+subdomain_certs "$1"
