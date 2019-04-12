@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# runs nginx as nginx user on port 8080 on broken container
+service apache2 stop
+pkill apache2
+echo -e "server {
+\tlisten 8080 default_server;
+\tlisten [::]:8080 default_server ipv6only=on;
+
+\troot /usr/share/nginx/html
+\tindex index.html index.htm
+
+\tserver_name localhost
+
+\tlocation / {
+\t\ttry_files \$uri \$uri/ =404
+\t}
+}" > /etc/nginx/sites-available/default
+chown nginx /etc/nginx/nginx.conf
+sudo -u nginx chmod u+r /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
