@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# creates a tar-zipped dump of all mysql databases
+d=$(date +%d-%m-%Y)
+if [ $# -eq 1 ]; then
+    mysqldump -uroot -p"$1" --all-databases > backup.sql
+    tar -czvf "$d".tar.gz backup.sql
+fi
