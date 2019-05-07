@@ -7,7 +7,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    if len(argv) < 2:
+    if len(argv) != 2:
         exit(1)
 
     user = "https://jsonplaceholder.typicode.com/users/" + argv[1]
