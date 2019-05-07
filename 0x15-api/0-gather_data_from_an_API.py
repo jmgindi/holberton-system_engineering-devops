@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """gathers completed tasks for an employee from API"""
 
-import requests
 import json
+import requests
 from sys import argv
 
 
