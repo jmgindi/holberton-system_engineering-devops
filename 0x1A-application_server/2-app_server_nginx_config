@@ -1,0 +1,22 @@
+server {
+        listen 80 default_server;
+	root /usr/share/nginx/html;
+	index index.html index.htm;
+	add_header X-Served-By 540-web-01;
+
+        location / {
+		 try_files $uri $uri/ =404;
+	}
+
+	location /airbnb-onepage {
+		 proxy_pass http://localhost:5000/airbnb-onepage;
+	}
+
+        location /redirect_me {
+		 return 301 https://www.youtube.com;
+	}
+
+        location /hbnb_static {
+		 alias /data/web_static/current;
+	}
+}
