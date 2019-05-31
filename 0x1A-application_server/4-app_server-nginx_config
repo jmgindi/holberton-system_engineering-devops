@@ -1,3 +1,4 @@
+# server config for web-01 server, problem 3
 server {
         listen 80 default_server;
 	root /usr/share/nginx/html;
